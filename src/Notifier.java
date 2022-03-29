@@ -57,12 +57,11 @@ public class Notifier implements ActionListener {
     private void setupProps(){
         //Create new properties object
         props = new Properties();
-
         //Try to find properties file
         try {
             props.load(new FileInputStream("src\\resources\\props.properties")); //If there is already a properties
         } catch (IOException e){
-            PropertiesDialog propertiesDialog = new PropertiesDialog(props);
+            PropertiesDialog propertiesDialog = new PropertiesDialog(props, true);
             System.out.println("Failed loading props file!");
         }
         
@@ -88,11 +87,11 @@ public class Notifier implements ActionListener {
             inboxFolder.open(Folder.READ_WRITE);    //Start regular loop
         } catch (NoSuchProviderException np){      
             System.out.println("No such provider: " + props.getProperty("protocolProvider"));
-            PropertiesDialog propertiesDialog = new PropertiesDialog(props);
+            PropertiesDialog propertiesDialog = new PropertiesDialog(props, false);
             setupProps();
         } catch (MessagingException me) {
             System.out.println("Messaging Exception!");
-            PropertiesDialog propertiesDialog = new PropertiesDialog(props);
+            PropertiesDialog propertiesDialog = new PropertiesDialog(props, false);
             setupProps();
         }
     }
@@ -133,7 +132,7 @@ public class Notifier implements ActionListener {
         //This is needed for the first check
         timer.stop();       //Stops the timer that may be currently running
         closeConnection();  //Close the connection
-        PropertiesDialog propertiesDialog = new PropertiesDialog(props);  //Open settings dialog so user can edit the properties
+        PropertiesDialog propertiesDialog = new PropertiesDialog(props, false);  //Open settings dialog so user can edit the properties
         playSound = Boolean.valueOf(props.getProperty("notisound"));
         updateNotiSoundItem();
         openConnection();                                               //Attempt to open the connection after the user closed the dialog

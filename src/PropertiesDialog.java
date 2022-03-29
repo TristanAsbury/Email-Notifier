@@ -22,11 +22,14 @@ public class PropertiesDialog extends JDialog implements ActionListener {
     
 
     Properties props;
+    boolean firstTime;
 
-    public PropertiesDialog(Properties props){ //For adding
+    public PropertiesDialog(Properties props, boolean firstTime){ //For adding
+        this.firstTime = firstTime;
         this.props = props;
         createGUI();
         setUp();
+        
     }
     
     private void createGUI(){
@@ -119,6 +122,9 @@ public class PropertiesDialog extends JDialog implements ActionListener {
 
         if(e.getSource().equals(cancelButton)){
             dispose();
+            if(this.firstTime){
+                System.exit(0);
+            }
         }
     }
 
