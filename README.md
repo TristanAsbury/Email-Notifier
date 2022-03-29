@@ -1,5 +1,5 @@
 # Email-Notifier  
-## Learning Outcomes  
+### Learning Outcomes  
 ✔️ Learned how to use email protocols  
 ✔️ Learned how to play a sound in Java  
 
