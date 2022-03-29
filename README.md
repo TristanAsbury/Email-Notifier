@@ -13,7 +13,9 @@ While the program is running, you will notice a tray icon (a randomly chosen ima
 The user can right-click the tray icon and can do the following:  
 - Exit the program  
 - Change the program settings  
-- Toggle notification sound  
+- Toggle notification sound
+
+
 If the user receives mail while the program is running, the most recently received mail will show with the sender and subject, along with the number of new messages:  
 <img src="RuntimeNewMailPopup.PNG" width="40%"></img>
 
