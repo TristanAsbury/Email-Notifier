@@ -6,8 +6,8 @@ When the user starts the program, the email notifier checks a local directory fo
 ## While Running  
 While the program is running, you will notice a tray icon (a randomly chosen image of a cube)  
 The user can right-click the tray icon and can do the following:  
-- Exit the program
-- Change the program settings
-- Toggle notification sound
+- Exit the program  
+- Change the program settings  
+- Toggle notification sound  
 <img src="TrayIcon.PNG" width="40%"></img>  
 
